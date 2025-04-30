@@ -8,27 +8,17 @@ if (!localStorage.getItem('visited')) {
   visits++;
   localStorage.setItem('visitCount', visits);
   localStorage.setItem('visited', 'true');
-
-  const visitorSquare = document.getElementById('visitorSquare');
-  if (visitorSquare) {
-    visitorSquare.textContent = visits;
-  }
+  document.getElementById('visitorSquare').textContent = visits;
 } else {
-  const visitorSquare = document.getElementById('visitorSquare');
-  if (visitorSquare) {
-    const visits = localStorage.getItem('visitCount');
-    visitorSquare.textContent = visits;
-  }
+  const visits = localStorage.getItem('visitCount');
+  document.getElementById('visitorSquare').textContent = visits;
 }
 
-// Optional: Add like/dislike rating logic (if needed)
+// Simple like/dislike system (can be expanded later)
 function rateGame(type) {
-  const likeCount = document.getElementById('likeCount');
-  const dislikeCount = document.getElementById('dislikeCount');
-
-  if (type === 'like') {
-    likeCount.textContent = parseInt(likeCount.textContent) + 1;
-  } else if (type === 'dislike') {
-    dislikeCount.textContent = parseInt(dislikeCount.textContent) + 1;
-  }
+  let countKey = type === 'like' ? 'likeCount' : 'dislikeCount';
+  let count = parseInt(localStorage.getItem(countKey)) || 0;
+  count++;
+  localStorage.setItem(countKey, count);
+  document.getElementById(countKey).textContent = count;
 }
