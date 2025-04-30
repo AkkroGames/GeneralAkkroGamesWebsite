@@ -5,254 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AKKRO Games</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(135deg, #0a0026, #000013);
-      color: #ffffff;
-      overflow-x: hidden;
-    }
-    .background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at center, #0a0026, #000013 80%);
-      z-index: -1;
-    }
-    .divider {
-      width: 100%;
-      height: 2px;
-      margin: 40px 0;
-      background: linear-gradient(90deg, #00eaff, #ff00f7);
-      border-radius: 1px;
-    }
-    header {
-      text-align: center;
-      padding: 50px 20px;
-      background: rgba(0, 0, 0, 0.6);
-    }
-    header .logo {
-      font-size: 3rem;
-      font-weight: bold;
-      color: #00eaff;
-      text-shadow: 0 0 10px #00eaff, 0 0 20px #ff00f7;
-      margin-bottom: 20px;
-    }
-    nav {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-    }
-    nav button {
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 30px;
-      background: linear-gradient(135deg, #00eaff, #ff00f7);
-      color: #fff;
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    }
-    nav button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
-    }
-    section {
-      padding: 80px 20px;
-      text-align: center;
-    }
-    section h2 {
-      font-size: 3rem;
-      color: #00eaff;
-      text-shadow: 0 0 20px #00eaff, 0 0 40px #00eaff;
-      margin-bottom: 30px;
-    }
-    .game-card-container {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 40px;
-    }
-    .game-card {
-      width: 300px;
-      height: 200px;
-      background: linear-gradient(135deg, #1a1a40, #2a2a72);
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .game-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 1);
-    }
-    .card-content {
-      text-align: center;
-      color: #ffffff;
-    }
-    .card-content h3 {
-      font-size: 1.5rem;
-      color: #00eaff;
-      margin-bottom: 10px;
-    }
-    .card-content p {
-      font-size: 1rem;
-      margin-bottom: 20px;
-    }
-    .card-content button {
-      padding: 10px 20px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 30px;
-      background: linear-gradient(135deg, #00eaff, #ff00f7);
-      color: #fff;
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    }
-    .card-content button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
-    }
-    .feedback-buttons button,
-    .social-buttons button,
-    .bug-report button {
-      padding: 15px 40px;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 30px;
-      background: linear-gradient(135deg, #00eaff, #ff00f7);
-      color: #fff;
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    }
-    .feedback-buttons button:hover,
-    .social-buttons button:hover,
-    .bug-report button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
-    }
-
-    /* Visitor Counter Styling */
-    #visitorCounter {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: linear-gradient(135deg, #00eaff, #ff00f7);
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 10px;
-      font-size: 1.2rem;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-      z-index: 1000;
-    }
-
-    /* Section for Visitor Counter at the Bottom */
-    #visitorSection {
-      position: relative;
-      margin-top: 100px;
-      text-align: center;
-    }
-    #visitorSquare {
-      width: 120px;
-      height: 120px;
-      background: linear-gradient(135deg, #00eaff, #ff00f7);
-      color: #ffffff;
-      display: inline-block;
-      font-size: 2rem;
-      line-height: 120px;
-      border-radius: 10px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
-      font-weight: bold;
-      text-shadow: 0 0 10px #ff00f7, 0 0 20px #00eaff;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    #visitorSquare:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 1);
-    }
-
-    /* Version Information */
-    .version-info {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 1rem;
-      color: #aaaaaa;
-      font-weight: bold;
-    }
-
-    /* Vertical Scroll Indicator */
-    .scroll-line {
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100%;
-      width: 4px;
-      background: linear-gradient(to bottom, #00eaff, #ff00f7);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-      z-index: 1000;
-      pointer-events: none;
-    }
-
-    /* Left Vertical Line */
-    .scroll-line-left {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 4px;
-      background: linear-gradient(to bottom, #00eaff, #ff00f7);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-      z-index: 1000;
-      pointer-events: none;
-    }
-
-    /* Media queries for different devices */
-    @media (max-width: 768px) {
-      body {
-        background: linear-gradient(135deg, #ffffff, #e0e0ff);
-        color: #000000;
-      }
-      .game-card {
-        background: linear-gradient(135deg, #ffffff, #ddddff);
-      }
-      .card-content h3 {
-        color: #ff5722;
-      }
-      .divider {
-        background: linear-gradient(90deg, #ff9800, #ff5722);
-      }
-      .scroll-line, .scroll-line-left {
-        background: linear-gradient(to bottom, #ff9800, #ff5722);
-      }
-      nav button {
-        background: linear-gradient(135deg, #ff9800, #ff5722);
-      }
-    }
-
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- Left Vertical Scroll Line -->
 <div class="scroll-line-left"></div>
-
-<!-- Right Vertical Scroll Line -->
 <div class="scroll-line"></div>
-
 <div class="background"></div>
 
 <header>
@@ -291,11 +49,9 @@
 
   <section id="feedback">
     <h2>Leave Your Feedback</h2>
-    <div class="feedback">
-      <div class="feedback-buttons">
-        <button id="likeButton" onclick="rateGame('like')">👍 Like</button>
-        <button id="dislikeButton" onclick="rateGame('dislike')">👎 Dislike</button>
-      </div>
+    <div class="feedback-buttons">
+      <button id="likeButton" onclick="rateGame('like')">👍 Like</button>
+      <button id="dislikeButton" onclick="rateGame('dislike')">👎 Dislike</button>
     </div>
   </section>
 
@@ -320,26 +76,8 @@
   <p>&copy; 2025 AKKRO GAMES. Все права защищены.</p>
 </footer>
 
-<script>
-  // Scroll to Section
-  function scrollToSection(sectionId) {
-    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-  }
+<div id="visitorCounter"></div>
 
-  // Like / Dislike Rating
-  function rateGame(rating) {
-    alert(rating === 'like' ? 'Спасибо за положительный отзыв!' : 'Извините, что не понравилось.');
-  }
-
-  // Visitor Counter
-  let visitorCount = 0;
-  if (localStorage.getItem("visitorCount")) {
-    visitorCount = parseInt(localStorage.getItem("visitorCount"));
-  }
-  visitorCount++;
-  localStorage.setItem("visitorCount", visitorCount);
-  document.getElementById("visitorCounter").textContent = `Visitor Count: ${visitorCount}`;
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
