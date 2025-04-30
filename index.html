@@ -5,12 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AKKRO Games</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- Left Vertical Scroll Line -->
 <div class="scroll-line-left"></div>
+
+<!-- Right Vertical Scroll Line -->
 <div class="scroll-line"></div>
+
 <div class="background"></div>
 
 <header>
@@ -49,35 +53,67 @@
 
   <section id="feedback">
     <h2>Leave Your Feedback</h2>
-    <div class="feedback-buttons">
-      <button id="likeButton" onclick="rateGame('like')">👍 Like</button>
-      <button id="dislikeButton" onclick="rateGame('dislike')">👎 Dislike</button>
+    <div class="feedback">
+      <div class="feedback-buttons">
+        <button id="likeButton" onclick="rateGame('like')">👍 Like</button>
+        <button id="dislikeButton" onclick="rateGame('dislike')">👎 Dislike</button>
+      </div>
+      <div class="feedback-stats">
+        <p>Likes: <span id="likeCount">1</span></p>
+        <p>Dislikes: <span id="dislikeCount">0</span></p>
+      </div>
     </div>
   </section>
+
+  <div class="divider"></div>
+
+  <section id="faq">
+    <h2>(FAQ)</h2>
+    <div class="faq">
+      <h3>How can I contact support?</h3>
+      <p>You can email us at: <a href="">support@akkrogames.com</a>.</p>
+      <h3>What platforms support your games?</h3>
+      <p>Our games are available on PC, consoles, and mobile devices.</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
 
   <section id="socials">
-    <h2>Follow Us On</h2>
+    <h2>Our Socials</h2>
     <div class="social-buttons">
-      <button onclick="window.open('https://www.youtube.com', '_blank')">YouTube</button>
-      <button onclick="window.open('https://www.twitch.tv', '_blank')">Twitch</button>
-      <button onclick="window.open('https://discord.gg', '_blank')">Discord</button>
+      <button onclick="window.open('https://www.youtube.com/channel/UCQGvaFWsskXuZVoG6LnSBRQ', '_blank')">YouTube</button>
+      <button onclick="window.open('https://discord.gg/Cru5rr5gw8', '_blank')">Discord</button>
+      <button onclick="window.open('https://www.tiktok.com/@akkro_games', '_blank')">TikTok</button>
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <section id="bug-report">
-    <h2>Found a Bug?</h2>
+    <h2>Found a Bug? Report Here</h2>
     <div class="bug-report">
-      <button onclick="window.location.href='mailto:support@akkrogames.com'">Report Bug</button>
+      <button onclick="window.location.href='mailto:akkrogames7@gmail.com?subject=Bug Report'">Report a Bug</button>
+      <p>If the button doesn't work, email us at: <a href="mailto:akkrogames7@gmail.com">akkrogames7@gmail.com</a></p>
     </div>
   </section>
+
+  <div class="divider"></div>
+
+  <!-- Visitor Counter Section -->
+  <section id="visitorSection">
+    <h2>Visitor Count</h2>
+    <div id="visitorSquare">0</div>
+    <div class="version-info">Version 1.2.5</div>
+  </section>
+
 </main>
 
 <footer>
-  <p>&copy; 2025 AKKRO GAMES. Все права защищены.</p>
+  <p>© 2025 AKKRO Games. All Rights Reserved.</p>
 </footer>
 
-<div id="visitorCounter"></div>
-
 <script src="script.js"></script>
+
 </body>
 </html>
