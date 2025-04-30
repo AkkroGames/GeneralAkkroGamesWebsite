@@ -7,18 +7,9 @@ if (!localStorage.getItem('visited')) {
   let visits = parseInt(localStorage.getItem('visitCount')) || 0;
   visits++;
   localStorage.setItem('visitCount', visits);
-  localStorage.setItem('visited', 'true');
-  document.getElementById('visitorSquare').textContent = visits;
-} else {
-  const visits = localStorage.getItem('visitCount');
-  document.getElementById('visitorSquare').textContent = visits;
-}
+  localStorage.setItem('visited', 'true'); // Mark the visit
 
-// Simple like/dislike system (can be expanded later)
-function rateGame(type) {
-  let countKey = type === 'like' ? 'likeCount' : 'dislikeCount';
-  let count = parseInt(localStorage.getItem(countKey)) || 0;
-  count++;
-  localStorage.setItem(countKey, count);
-  document.getElementById(countKey).textContent = count;
+  // Set visitor count to the displayed square
+  const visitorSquare = document.getElementById('visitorSquare');
+  visitorSquare.textContent = visits;
 }
