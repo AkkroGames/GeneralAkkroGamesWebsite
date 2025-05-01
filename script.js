@@ -2,14 +2,15 @@ function scrollToSection(id) {
   document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
 }
 
-// Visitor Counter - Count only once
-if (!localStorage.getItem('visited')) {
-  let visits = parseInt(localStorage.getItem('visitCount')) || 0;
-  visits++;
-  localStorage.setItem('visitCount', visits);
-  localStorage.setItem('visited', 'true'); // Mark the visit
+const likeButton = document.getElementById('likeButton');
+const dislikeButton = document.getElementById('dislikeButton');
+const likeCount = document.getElementById('likeCount');
+const dislikeCount = document.getElementById('dislikeCount');
 
-  // Set visitor count to the displayed square
-  const visitorSquare = document.getElementById('visitorSquare');
-  visitorSquare.textContent = visits;
-}
+likeButton.addEventListener('click', () => {
+  likeCount.textContent = parseInt(likeCount.textContent) + 1;
+});
+
+dislikeButton.addEventListener('click', () => {
+  dislikeCount.textContent = parseInt(dislikeCount.textContent) + 1;
+});
