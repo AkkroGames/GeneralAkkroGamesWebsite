@@ -5,115 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AKKRO Games</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="background"></div>
 
-<!-- Left Vertical Scroll Line -->
-<div class="scroll-line-left"></div>
+  <header>
+    <div class="logo">AKKRO Games</div>
+    <nav>
+      <button onclick="scrollToSection('games')">Games</button>
+      <button onclick="scrollToSection('feedback')">Rate Us</button>
+      <button onclick="scrollToSection('faq')">FAQ</button>
+      <button onclick="scrollToSection('socials')">Our Socials</button>
+      <button onclick="scrollToSection('bug-report')">Found a Bug?</button>
+    </nav>
+  </header>
 
-<!-- Right Vertical Scroll Line -->
-<div class="scroll-line"></div>
-
-<div class="background"></div>
-
-<header>
-  <div class="logo">AKKRO Games</div>
-  <nav>
-    <button onclick="scrollToSection('games')">Games</button>
-    <button onclick="scrollToSection('feedback')">Rate Us</button>
-    <button onclick="scrollToSection('faq')">FAQ</button>
-    <button onclick="scrollToSection('socials')">Our Socials</button>
-    <button onclick="scrollToSection('bug-report')">Found a Bug?</button>
-  </nav>
-</header>
-
-<main>
-  <section id="games">
-    <h2>Our Games</h2>
-    <div class="game-card-container">
-      <div class="game-card">
-        <div class="card-content">
-          <h3>Galaxy Clicker</h3>
-          <p>Tap asteroids, collect points, and chase rare meteors in space!<br>version 1.2</p>
-          <button onclick="window.open('https://akkrogames.github.io/AkkroGame1/', '_blank')">Play</button>
+  <main>
+    <section id="games">
+      <h2>Our Games</h2>
+      <div class="game-card-container">
+        <div class="game-card">
+          <div class="card-content">
+            <h3>Galaxy Clicker</h3>
+            <p>Tap asteroids, collect points, and chase rare meteors in space!<br>version 1.2</p>
+            <button onclick="window.open('https://akkrogames.github.io/AkkroGame1/', '_blank')">Play</button>
+          </div>
+        </div>
+        <div class="game-card">
+          <div class="card-content">
+            <h3>Space Wars</h3>
+            <p>Fly through space, dodge and shoot enemies, and make it to the final rescue base alive!<br>version 1.0<br>UPDATE!</p>
+            <button onclick="window.open('https://akkrogames.github.io/AkkroGame2/', '_blank')">Play</button>
+          </div>
         </div>
       </div>
-      <div class="game-card">
-        <div class="card-content">
-          <h3>Space Wars</h3>
-          <p>Fly through space, dodge and shoot enemies, and make it to the final rescue base alive!<br>version 1.0<br>UPDATE!</p>
-          <button onclick="window.open('https://akkrogames.github.io/AkkroGame2/', '_blank')">Play</button>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="feedback">
+      <h2>Leave Your Feedback</h2>
+      <div class="feedback">
+        <div class="feedback-buttons">
+          <button id="likeButton">👍 Like</button>
+          <button id="dislikeButton">👎 Dislike</button>
+        </div>
+        <div class="feedback-stats">
+          <p>Likes: <span id="likeCount">1</span></p>
+          <p>Dislikes: <span id="dislikeCount">0</span></p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <div class="divider"></div>
+    <div class="divider"></div>
 
-  <section id="feedback">
-    <h2>Leave Your Feedback</h2>
-    <div class="feedback">
-      <div class="feedback-buttons">
-        <button id="likeButton" onclick="rateGame('like')">👍 Like</button>
-        <button id="dislikeButton" onclick="rateGame('dislike')">👎 Dislike</button>
+    <section id="faq">
+      <h2>(FAQ)</h2>
+      <div class="faq">
+        <h3>How can I contact support?</h3>
+        <p>You can email us at: <a href="">support@akkrogames.com</a>.</p>
+        <h3>What platforms support your games?</h3>
+        <p>Our games are available on PC, consoles, and mobile devices.</p>
       </div>
-      <div class="feedback-stats">
-        <p>Likes: <span id="likeCount">1</span></p>
-        <p>Dislikes: <span id="dislikeCount">0</span></p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="socials">
+      <h2>Our Socials</h2>
+      <div class="social-buttons">
+        <button onclick="window.open('https://www.youtube.com/channel/UCQGvaFWsskXuZVoG6LnSBRQ', '_blank')">YouTube</button>
+        <button onclick="window.open('https://discord.gg/Cru5rr5gw8', '_blank')">Discord</button>
+        <button onclick="window.open('https://www.tiktok.com/@akkro_games', '_blank')">TikTok</button>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <div class="divider"></div>
+    <div class="divider"></div>
 
-  <section id="faq">
-    <h2>(FAQ)</h2>
-    <div class="faq">
-      <h3>How can I contact support?</h3>
-      <p>You can email us at: <a href="">support@akkrogames.com</a>.</p>
-      <h3>What platforms support your games?</h3>
-      <p>Our games are available on PC, consoles, and mobile devices.</p>
-    </div>
-  </section>
+    <section id="bug-report">
+      <h2>Found a Bug? Report Here</h2>
+      <div class="bug-report">
+        <button onclick="window.location.href='mailto:akkrogames7@gmail.com?subject=Bug Report'">Report a Bug</button>
+        <p>If the button doesn't work, email us at: <a href="mailto:akkrogames7@gmail.com">akkrogames7@gmail.com</a></p>
+      </div>
+    </section>
 
-  <div class="divider"></div>
+    <div class="divider"></div>
+  </main>
 
-  <section id="socials">
-    <h2>Our Socials</h2>
-    <div class="social-buttons">
-      <button onclick="window.open('https://www.youtube.com/channel/UCQGvaFWsskXuZVoG6LnSBRQ', '_blank')">YouTube</button>
-      <button onclick="window.open('https://discord.gg/Cru5rr5gw8', '_blank')">Discord</button>
-      <button onclick="window.open('https://www.tiktok.com/@akkro_games', '_blank')">TikTok</button>
-    </div>
-  </section>
+  <footer>
+    <p>© 2025 AKKRO Games. All Rights Reserved.</p>
+  </footer>
 
-  <div class="divider"></div>
-
-  <section id="bug-report">
-    <h2>Found a Bug? Report Here</h2>
-    <div class="bug-report">
-      <button onclick="window.location.href='mailto:akkrogames7@gmail.com?subject=Bug Report'">Report a Bug</button>
-      <p>If the button doesn't work, email us at: <a href="mailto:akkrogames7@gmail.com">akkrogames7@gmail.com</a></p>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- New Section for Visitor Counter -->
-  <section id="visitorSection">
-    <h2>Visitor Count</h2>
-    <div id="visitorSquare">0</div>
-    <div class="version-info">Version 1.2.5</div> <!-- Version Info -->
-  </section>
-
-</main>
-
-<footer>
-  <p>© 2025 AKKRO Games. All Rights Reserved.</p>
-</footer>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
