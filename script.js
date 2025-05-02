@@ -2,15 +2,25 @@ function scrollToSection(id) {
   document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
 }
 
-const likeButton = document.getElementById('likeButton');
-const dislikeButton = document.getElementById('dislikeButton');
-const likeCount = document.getElementById('likeCount');
-const dislikeCount = document.getElementById('dislikeCount');
+// Visitor Counter - Count only once
+if (!localStorage.getItem('visited')) {
+  let visits = parseInt(localStorage.getItem('visitCount')) || 0;
+  visits++;
+  localStorage.setItem('visitCount', visits);
+  localStorage.setItem('visited', true);
+  document.getElementById("visitorSquare").innerText = visits;
+}
 
-likeButton.addEventListener('click', () => {
-  likeCount.textContent = parseInt(likeCount.textContent) + 1;
-});
+// Game Rating System
+let likeCount = 1;
+let dislikeCount = 0;
 
-dislikeButton.addEventListener('click', () => {
-  dislikeCount.textContent = parseInt(dislikeCount.textContent) + 1;
-});
+function rateGame(type) {
+  if (type === 'like') {
+    likeCount++;
+    document.getElementById("likeCount").innerText = likeCount;
+  } else if (type === 'dislike') {
+    dislikeCount++;
+    document.getElementById("dislikeCount").innerText = dislikeCount;
+  }
+}
