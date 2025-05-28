@@ -4,121 +4,121 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AKKRO Games</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css"> <!-- Подключаем внешний CSS файл -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-<!-- Left Vertical Scroll Line -->
-<div class="scroll-line-left"></div>
-
-<!-- Right Vertical Scroll Line -->
-<div class="scroll-line"></div>
-
-<div class="background"></div>
-
+<div class="creative-bg">
+  <div class="glow-spot blue"></div>
+  <div class="glow-spot pink"></div>
+  <div class="glow-spot purple"></div>
+</div>
 <header>
-  <div class="logo">AKKRO Games</div>
+  <div class="logo" data-i18n="siteTitle">AKKRO Games</div>
   <nav>
-    <button onclick="scrollToSection('games')">Games</button>
-    <button onclick="scrollToSection('feedback')">Rate Us</button>
-    <button onclick="scrollToSection('faq')">FAQ</button>
-    <button onclick="scrollToSection('socials')">Our Socials</button>
-    <button onclick="scrollToSection('bug-report')">Found a Bug?</button>
+    <button onclick="scrollToSection('games')" data-i18n="navGames">Games</button>
+    <button onclick="scrollToSection('feedback')" data-i18n="navRateUs">Rate Us</button>
+    <button onclick="scrollToSection('faq')" data-i18n="navFAQ">FAQ</button>
+    <button onclick="scrollToSection('socials')" data-i18n="navSocials">Our Socials</button>
+    <button onclick="scrollToSection('bug-report')" data-i18n="navBug">Found a Bug?</button>
   </nav>
+  <div class="neon-divider"></div>
 </header>
-
 <main>
   <section id="games">
-    <h2>Our Games</h2>
+    <h2 data-i18n="ourGames">Our Games</h2>
     <div class="game-card-container">
       <div class="game-card">
         <div class="card-content">
+          <span class="update-tag" data-i18n="updateTag">Update!</span>
           <h3>Galaxy Clicker</h3>
-          <p>Tap asteroids, collect points, and chase rare meteors in space!<br>version 1.2</p>
-          <button onclick="window.open('https://akkrogames.github.io/AkkroGame1/', '_blank')">Play</button>
+          <p data-i18n="game1Desc">Tap asteroids, collect points, and chase rare meteors in space!<br>version 1.2</p>
+          <button onclick="window.open('https://akkrogames.github.io/AkkroGame1/', '_blank')" data-i18n="playBtn">Play</button>
         </div>
       </div>
       <div class="game-card">
         <div class="card-content">
+          <span class="update-tag" data-i18n="updateTag">Update!</span>
           <h3>Space Wars</h3>
-          <p>Fly through space, dodge and shoot enemies, and make it to the final rescue base alive!<br>version 1.0<br></p>
-          <button onclick="window.open('https://akkrogames.github.io/AkkroGame2/', '_blank')">Play</button>
+          <p data-i18n="game2Desc">Fly through space, dodge and shoot enemies, and make it to the final rescue base alive!<br>version 1.0</p>
+          <button onclick="window.open('https://akkrogames.github.io/AkkroGame2/', '_blank')" data-i18n="playBtn">Play</button>
         </div>
       </div>
       <div class="game-card">
         <div class="card-content">
+          <span class="update-tag" data-i18n="updateTag">Update!</span>
           <h3>Galaxy Tic Tac Toe</h3>
-          <p>Galaxy Tic-Tac-Toe is a cosmic twist on the classic game with space battles and exciting modes!<br>UPDATE!<br>version 1.0</p>
-          <button onclick="window.open('https://akkrogames.github.io/Akkro-Game-3/', '_blank')">Play</button>
+          <p data-i18n="game3Desc">Galaxy Tic-Tac-Toe is a cosmic twist on the classic game with space battles and exciting modes!<br>UPDATE!<br>version 1.0</p>
+          <button onclick="window.open('https://akkrogames.github.io/Akkro-Game-3/', '_blank')" data-i18n="playBtn">Play</button>
+        </div>
+      </div>
+      <div class="game-card">
+        <div class="card-content">
+          <span class="new-tag" data-i18n="newTag">NEW!</span>
+          <h3>Save the Moon</h3>
+          <p data-i18n="game4Desc">Defend the Moon from incoming dangers!</p>
+          <button data-i18n="playBtn">Play</button>
         </div>
       </div>
     </div>
   </section>
-
   <div class="divider"></div>
-
   <section id="feedback">
-    <h2>Leave Your Feedback</h2>
+    <h2 data-i18n="leaveFeedback">Leave Your Feedback</h2>
     <div class="feedback">
       <div class="feedback-buttons">
-        <button id="likeButton" onclick="rateGame('like')">👍 Like</button>
-        <button id="dislikeButton" onclick="rateGame('dislike')">👎 Dislike</button>
+        <button id="likeButton" onclick="rateGame('like')" data-i18n="likeBtn">👍 Like</button>
+        <button id="dislikeButton" onclick="rateGame('dislike')" data-i18n="dislikeBtn">👎 Dislike</button>
       </div>
       <div class="feedback-stats">
-        <p>Likes: <span id="likeCount">1</span></p>
-        <p>Dislikes: <span id="dislikeCount">0</span></p>
+        <p data-i18n="likes">Likes: <span id="likeCount">1</span></p>
+        <p data-i18n="dislikes">Dislikes: <span id="dislikeCount">0</span></p>
       </div>
     </div>
   </section>
-
   <div class="divider"></div>
-
   <section id="faq">
-    <h2>(FAQ)</h2>
+    <h2 data-i18n="faq">(FAQ)</h2>
     <div class="faq">
-      <h3>How can I contact support?</h3>
-      <p>You can email us at: <a href="mailto:support@akkrogames.com">support@akkrogames.com</a>.</p>
-      <h3>What platforms support your games?</h3>
-      <p>Our games are available on PC, consoles, and mobile devices.</p>
+      <h3 data-i18n="faq1q">How can I contact support?</h3>
+      <p data-i18n="faq1a">You can email us at: <a href="mailto:support@akkrogames.com">support@akkrogames.com</a>.</p>
+      <h3 data-i18n="faq2q">What platforms support your games?</h3>
+      <p data-i18n="faq2a">Our games are available on PC, consoles, and mobile devices.</p>
     </div>
   </section>
-
   <div class="divider"></div>
-
   <section id="socials">
-    <h2>Our Socials</h2>
+    <h2 data-i18n="ourSocials">Our Socials</h2>
     <div class="social-buttons">
       <button onclick="window.open('https://www.youtube.com/channel/UCQGvaFWsskXuZVoG6LnSBRQ', '_blank')">YouTube</button>
       <button onclick="window.open('https://discord.gg/Cru5rr5gw8', '_blank')">Discord</button>
       <button onclick="window.open('https://www.tiktok.com/@akkro_games', '_blank')">TikTok</button>
     </div>
   </section>
-
   <div class="divider"></div>
-
   <section id="bug-report">
-    <h2>Found a Bug? Report Here</h2>
+    <h2 data-i18n="foundBug">Found a Bug? Report Here</h2>
     <div class="bug-report">
-      <button onclick="window.location.href='mailto:akkrogames7@gmail.com?subject=Bug Report'">Report a Bug</button>
-      <p>If the button doesn't work, email us at: <a href="mailto:akkrogames7@gmail.com">akkrogames7@gmail.com</a></p>
+      <button onclick="window.location.href='mailto:akkrogames7@gmail.com?subject=Bug Report'" data-i18n="reportBtn">Report a Bug</button>
+      <p data-i18n="bugEmail">If the button doesn't work, email us at: <a href="mailto:akkrogames7@gmail.com">akkrogames7@gmail.com</a></p>
     </div>
   </section>
-
   <div class="divider"></div>
-
-  <section id="visitorSection">
-    <h2>Visitor Count</h2>
-    <div id="visitorSquare">0</div>
-    <div class="version-info">Version 1.4</div>
-  </section>
-
+  <span class="version-info" data-i18n="version">Version 1.4</span>
+  <div class="lang-theme-bar">
+    <button class="theme-btn" onclick="toggleTheme()" id="themeToggleBtn" data-i18n="toggleTheme">Switch Theme</button>
+    <label>
+      <select class="lang-select" id="langSelect" onchange="changeLang(this.value)">
+        <option value="en">English</option>
+        <option value="ru">Русский</option>
+        <option value="es">Español</option>
+      </select>
+    </label>
+  </div>
 </main>
-
 <footer>
-  <p>© 2025 AKKRO Games. All Rights Reserved.</p>
+  <p data-i18n="copyright">© 2025 AKKRO Games. All Rights Reserved.</p>
 </footer>
-
-<script src="script.js"></script> <!-- Подключаем внешний JS файл -->
+<script src="main.js"></script>
 </body>
 </html>
